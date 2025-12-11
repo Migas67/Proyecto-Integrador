@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+#inicio, #juego {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.mensaje {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#feedback-nombre {
+    color: darkred;
+}
+
+/* Tablero de juego */
+#contenedor-tablero {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+    background-image: url('img/suelo.png'); /* Imagen de suelo */
+    background-size: cover;
+    cursor: default;
+    transition: background-color 0.3s;
+}
+
+.movimiento-posible {
+    border: 3px solid red; /* Resaltar en rojo */
+    cursor: pointer;
+}
+
+.movimiento-posible:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.celda-heroe img, .celda-cofre img {
+    width: 80%;
+    height: 80%;
+}
+
+.panel-control {
+    margin-bottom: 20px;
+}
+
+#btn-tirar-dado img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda del Cofre</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Aventura Interactiva: Búsqueda del Cofre</h1>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Comienza tu Aventura</h2>
+            <form id="formulario-nombre">
+                <input type="text" id="nombre-heroe" placeholder="Introduce tu nombre (mín. 4 letras)" required>
+                <button type="submit" id="btn-introducir-nombre">Introducir nombre</button>
+            </form>
+            <p id="feedback-nombre" class="mensaje"></p>
+            <button id="btn-jugar" disabled>Jugar</button>
+        </section>
+
+        <section id="juego" style="display: none;">
+            <p>A luchar héroe: <span id="heroe-nombre-display"></span></p>
+            <p>Tiradas: <span id="contador-tiradas">0</span></p>
+            <div class="panel-control">
+                <button id="btn-tirar-dado">
+                    Tirar Dado <img id="imagen-dado" src="img/dado-0.png" alt="Dado">
+                </button>
+                <p id="record-actual"></p>
+            </div>
+
+            <div id="contenedor-tablero">
+                <table>
+                    <tr>
+                        <td data-fila="0" data-columna="0" class="celda-suelo celda-heroe"><img src="img/heroe.png"
+                                alt="Héroe"></td>
+                        <td data-fila="0" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="0" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="1" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="1" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="2" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="2" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="3" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="3" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="4" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="4" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="5" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="5" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="6" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="6" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="7" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="7" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="8" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="8" data-columna="9" class="celda-suelo"></td>
+                    </tr>
+                    <tr>
+                        <td data-fila="9" data-columna="0" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="1" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="2" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="3" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="4" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="5" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="6" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="7" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="8" class="celda-suelo"></td>
+                        <td data-fila="9" data-columna="9" class="celda-suelo celda-cofre"><img src="img/cofre.png"
+                                alt="Cofre"></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
