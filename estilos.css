@@ -6,10 +6,7 @@ body {
 }
 
 #inicio, #juego {
-    background: #fff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 20px auto;
 }
@@ -30,9 +27,6 @@ body {
     margin-top: 20px;
 }
 
-table {
-    border-collapse: collapse;
-}
 
 td {
     width: 40px;
@@ -40,14 +34,14 @@ td {
     border: 1px solid #ccc;
     text-align: center;
     vertical-align: middle;
-    background-image: url('img/suelo.png'); /* Imagen de suelo */
+    background-image: url('img/suelo.png'); 
     background-size: cover;
     cursor: default;
     transition: background-color 0.3s;
 }
 
 .movimiento-posible {
-    border: 3px solid red; /* Resaltar en rojo */
+    border: 3px solid red;
     cursor: pointer;
 }
 
