@@ -1,3 +1,4 @@
+
 const TAMANO_TABLERO = 10; // Defino una constante con el valor de 10, representa el tamaño de el tablero.
 const POSICION_COFRE = { fila: TAMANO_TABLERO - 1, columna: TAMANO_TABLERO - 1 };
 // Se define posicion cofre y se le coloca en la ultima fila y columna.
